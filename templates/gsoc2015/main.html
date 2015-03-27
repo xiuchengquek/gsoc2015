@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>GSOC Prototype - Tumour Heterogenity</title>
+    {% load static from staticfiles %}
+
+    <!-- External Dependencies -->
+    {% static "jquery/dist/jquery.min.js" as jquery %}
+    {% static "bootstrap/dist/js/bootstrap.min.js" as bootstrapJS %}
+    {% static "d3/d3.min.js" as d3js %}
+    {% static "vis/dist/vis.js" as visJS %}
+    {% static "chronoline.js/chronoline/raphael-min.js" as raphaelJS %}
+    {% static "underscore/underscore.js" as usJS %}
+
+
+    {% static "angular/angular.js" as angular %}
+    {% static "angular-resource/angular-resource.min.js" as ng_resources %}
+    {% static "nvd3/nv.d3.js" as nvJS %}
+    {% static "angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js" as nvdJS %}
+
+    <!-- Internal -->
+    {% static "gsoc2015/js/main.js" as mainJS %}
+    {% static "gsoc2015/js/controller.js" as controllerJS %}
+    {% static "gsoc2015/js/directive.js" as directiveJS %}
+    {% static "gsoc2015/js/services.js" as servicesJS %}
+
+    <!-- StyleSheet -->
+    {% static "bootstrap/dist/css/bootstrap.min.css" as bootstrapCSS %}
+    {% static "vis/dist/vis.css" as visCSS %}
+    {% static "gsoc2015/css/main.css" as mainCSS %}
+    {% static "nvd3/nv.d3.css" as nvCSS %}
+    {% static "angularjs-nvd3-directives/examples/stylesheets/nv.d3.css" as nvCSS %}
+
+    <!-- Actual loading of the StyleSheet-->
+    <!-- Bootstrap core CSS -->
+    <link href="{{ bootstrapCSS }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ visCSS }}" rel="stylesheet">
+    <!-- <link href="{{ nvCSS }}" rel="stylesheet"> -->
+    <link href="{{ mainCSS }}" rel="stylesheet">
+
+
+</head>
+<script type="text/javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}"</script>
+<script src="{{ usJS }}"></script>
+<body ng-app="heterApp" ng-controller="heterCtrl">
+
+<div class="col-md-10 col-md-offset-1">
+<div class="row">
+    <div class="col-md-10 ">
+        <h2> GSOC 2015 - Tumour Heterogeneity Tool Prototype</h2>
+        <h4> <em>Quek</em>xiucheng - x.quek@garvan.org.au</h4>
+
+    </div>
+</div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-10">
+            <patient-info data='patientBundle.value.patient'></patient-info>
+        </div>
+    </div>
+
+
+
+
+<div class="row">
+    <div class="col-md-10">
+        <time-line data='patientBundle.value'></time-line>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+     <biopsy-details></biopsy-details>
+    </div>
+</div>
+
+</br>
+
+<div class="row">
+
+    <div class="col-md-5" >
+        <gene-detail groupdata="biopsydata.value"></gene-detail>
+    </div>
+    <div class="col-md-5">
+        <treatment-details data="treatmentList"></treatment-details>
+    </div>
+</div>
+
+</div>
+
+
+
+
+<script src="{{ jquery }}"></script>
+<script src="{{ d3js }}"></script>
+<script src="{{ bootstrapJS }}"></script>
+<script src="{{ angular }}"></script>
+<script src="{{ ng_resources }}"></script>
+<script src="{{ visJS }}"></script>
+<script src="{{ nvJS }}"></script>
+<script src="{{ nvdJS }}"></script>
+<script src="{{ mainJS }}"></script>
+<script src="{{ directiveJS }}"></script>
+<script src="{{ servicesJS }}"></script>
+<script src="{{ controllerJS }}"></script>
+
+
+
+</body>
+
+</body>
+</html>

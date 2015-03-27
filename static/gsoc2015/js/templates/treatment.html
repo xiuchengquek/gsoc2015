@@ -1,0 +1,24 @@
+
+    <!-- start of accordion -->
+    <h3> Treatment Information (click to toggle) </h3>
+    <div class="bs-example">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default"  ng-repeat="key in data.value.treatmentList track by $index">
+                <div class="panel-heading" >
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" id="treatmentLink[[$index]]" href="#treamtment[[$index]]">[[key.treatmentName]] [[key.startDate]]  [[key.endDate]] </a>
+                    </h3>
+                </div>
+                <div id="treamtment[[$index]]" class="panel-collapse collapse ">
+                    <div class="panel-body">
+
+                        [[key.treatmentDescription]]
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
